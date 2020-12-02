@@ -1,0 +1,12 @@
+[Unit]
+Description=influxdb
+
+[Service]
+Environment=INFLUXD_CONFIG_PATH=/etc/influxdb.yaml
+Environment=HOME=/var/lib/influxdb
+ExecStart=/opt/influx/bin/influxd
+DynamicUser=yes
+StateDirectory=influxdb
+
+[Install]
+WantedBy=multi-user.target
